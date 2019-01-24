@@ -13,8 +13,8 @@ CREATE TYPE IF NOT EXISTS journal_type (
 );
 
 CREATE TYPE IF NOT EXISTS pages_type (
-	end DOUBLE,
-	start DOUBLE
+	end INT,
+	start INT 
 );
 
 CREATE TABLE IF NOT EXISTS bibliography (
@@ -27,6 +27,6 @@ CREATE TABLE IF NOT EXISTS bibliography (
 	title VARCHAR,
 	type VARCHAR,
 	url VARCHAR,
-	year DOUBLE,
+	year INT,
 	PRIMARY KEY (id)
 );
