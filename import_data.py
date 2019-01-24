@@ -12,6 +12,7 @@ try:
         count = 0
         for line in f:
             dictio = json.loads(line)
+            dictio["id"] = dictio.pop("_id")
             try:
                 dictio["year"] = int(dictio["year"])
             except TypeError:
@@ -25,7 +26,7 @@ try:
             except TypeError:
                 pass
             line = json.dumps(dictio)
-            line = line.replace('"_id"', '"id"').replace("'", "''")
+            line = line.replace("'", "''")
             query = "INSERT INTO bibliography JSON '{}'".format(line)
             session.execute(query)
             count += 1
