@@ -1,0 +1,31 @@
+CREATE KEYSPACE IF NOT EXISTS dblp
+WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor': 3 };
+
+USE dblp;
+
+CREATE TYPE IF NOT EXISTS journal_type (
+	editor VARCHAR,
+	isbn list<varchar>,
+	series VARCHAR,
+	volume VARCHAR
+);
+
+
+CREATE TYPE IF NOT EXISTS pages_type (
+	end DOUBLE,
+	start DOUBLE
+);
+
+CREATE TABLE IF NOT EXISTS bibliography (
+	id VARCHAR, 
+	authors list<VARCHAR>,
+	booktitle VARCHAR,
+	cites list<varchar>,
+	journal frozen<journal_type>,
+	pages frozen<pages_type>,
+	title VARCHAR,
+	type VARCHAR,
+	url VARCHAR,
+	year DOUBLE,
+	PRIMARY KEY (id)
+);
