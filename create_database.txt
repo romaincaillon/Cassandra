@@ -1,4 +1,6 @@
-CREATE KEYSPACE IF NOT EXISTS dblp
+DROP KEYSPACE IF EXISTS dblp;
+
+CREATE KEYSPACE dblp
 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor': 3 };
 
 USE dblp;
