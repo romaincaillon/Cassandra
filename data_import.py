@@ -15,7 +15,7 @@ try:
             session.execute(query)
             count += 1
             if (count % 1000) == 0:
-                print(count)
+                print("{} lines imported.".format(count))
 
 except FileNotFoundError:
     print("Invalid file")
