@@ -12,7 +12,6 @@ CREATE TYPE IF NOT EXISTS journal_type (
 	volume VARCHAR
 );
 
-
 CREATE TYPE IF NOT EXISTS pages_type (
 	end DOUBLE,
 	start DOUBLE
