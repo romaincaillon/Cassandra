@@ -14,11 +14,11 @@ CREATE TYPE IF NOT EXISTS journal_type (
 
 CREATE TYPE IF NOT EXISTS pages_type (
 	end INT,
-	start INT 
+	start INT
 );
 
 CREATE TABLE IF NOT EXISTS bibliography (
-	id VARCHAR, 
+	id VARCHAR,
 	authors list<VARCHAR>,
 	booktitle VARCHAR,
 	cites list<varchar>,
@@ -30,3 +30,5 @@ CREATE TABLE IF NOT EXISTS bibliography (
 	year INT,
 	PRIMARY KEY (id)
 );
+
+UPDATE authors SET authors = authors + ['Corentin Dauvissat', 'Romain Caillon', 'Aron Bege'] WHERE
